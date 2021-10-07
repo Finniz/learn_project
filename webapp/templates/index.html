@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel= "stylesheet" type="text/css" href="{{ url_for('static',filename='css/main.css') }}">
+
+    <title>{{ page_title }}</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <a href="" class="navbar-brand"><img src="static/img/logo.png" class="round"></a>    
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="#" class="nav-link px-2 link-dark">Курс доллара</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">Курс евро</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">ещё курс</a></li>
+          </ul>
+    
+          <div class="col-md-3 text-end">
+            <a href="/login"><button type="button" class="btn btn-outline-dark me-2">Вход</button></a>
+            <button type="button" class="btn btn-dark">Регистрация</button>
+          </div>
+        </header>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-4">
+          {% with messages = get_flashed_messages() %}
+          {% if messages %}
+          <div class="alert alert-warning" role="alert">
+            {% for message in messages %}
+              {{ message }}<br>
+            {% endfor %}
+          </div>
+          {% endif %}
+        {% endwith %}
+        </div>
+        <div class="col text-center">
+          <h2>Мировые индексы</h2>
+        </div>
+        <div class="col-4">
+        </div>
+      </div>
+    </div>
+    <div class="bd-example container-fluid">
+      <div class="row">
+        <div class="col">
+        </div>
+        <div class="col-8">
+          <table class="table table-borderless table-sm table-striped">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Индекс</th>
+                <th scope="col">Посл. цена</th>
+                <th scope="col">Макс. цена</th>
+                <th scope="col">Мин. цена</th>
+                <th scope="col">Изменение</th>
+                <th scope="col">Изменение %</th>
+                <th scope="col">Время</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col">
+        </div>
+      </div> 
+      <br>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-2">
+          </div>
+          <div class="col-2 text-center">
+            <h5>Топ-5 выросших акций</h5>
+          </div>
+          <div class="col-3">
+          </div>
+          <div class="col-2 text-center">
+            <h5>Топ-5 упавших акций</h5>
+          </div>
+          <div class="col-2">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2">
+          </div>
+          <div class="col-3">
+            <table class="table table-borderless table-sm table-striped">
+              <thead class="table-success">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Название</th>
+                  <th scope="col">Рост</th>
+                  <th scope="col">Рост %</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-2">
+          </div>
+          <div class="col-3">
+            <table class="table table-borderless table-sm table-striped">
+              <thead class="table-danger">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Название</th>
+                  <th scope="col">Падение</th>
+                  <th scope="col">Падение %</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-2">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
