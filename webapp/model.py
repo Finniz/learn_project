@@ -3,11 +3,12 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 class Share(db.Model):
-    Stock_Symbol = db.Column(db.String, unique=True, primary_key=True)
-    EPS = db.Column(db.Float, nullable=False)
-    Volume = db.Column(db.Float, nullable=False)
-    PE_Ratio = db.Column(db.Float, nullable=False)
-    Prev_Close = db.Column(db.Float, nullable=True)
+    id = db.Column(db.Integer, primary_key=True)
+    stock_symbol = db.Column(db.String, unique=True)
+    eps = db.Column(db.String, nullable=False)
+    volume = db.Column(db.String, nullable=False)
+    pe_ratio = db.Column(db.String, nullable=False)
+    prev_close = db.Column(db.String, nullable=True)
 
     def __repr__(self):
-            return '<Share {} {}>'.format(self.Stock_Symbol, self.Prev_Close)
+            return '<Share {} {}>'.format(self.stock_symbol, self.prev_close)
