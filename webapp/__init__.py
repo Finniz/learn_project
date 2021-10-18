@@ -1,7 +1,8 @@
-from flask import Flask, flash, redirect, render_template, url_for
-from flask_login import LoginManager, current_user, login_required
-from webapp.user.forms import LoginForm
-from webapp.db import db
+from flask import Flask
+from flask_login import LoginManager
+from webapp.config import Config
+from flask_migrate import Migrate
+from webapp.model import db
 from webapp.user.models import User
 from webapp.user.views import blueprint as user_blueprint
 from webapp.admin.views import blueprint as admin_blueprint
@@ -10,8 +11,9 @@ from webapp.user_page.views import blueprint as user_page_blueprint
 
 def create_app():
     app = Flask(__name__)
-    app.config.from_pyfile('config.py')
+    app.config.from_object(Config)
     db.init_app(app)
+    migrate = Migrate(app, db)
 
     login_manager = LoginManager()
     login_manager.init_app(app)
@@ -28,3 +30,8 @@ def create_app():
     
 
     return app
+
+
+
+#from flask_sqlalchemy import SQLAlchemy
+#from webapp import routes, model
