@@ -9,6 +9,12 @@ from webapp.user.views import blueprint as user_blueprint
 from webapp.admin.views import blueprint as admin_blueprint
 from webapp.main_page.views import blueprint as main_page_blueprint
 from webapp.user_page.views import blueprint as user_page_blueprint
+from webapp.model import db
+from webapp.config import Config
+from flask_migrate import Migrate
+#from flask_sqlalchemy import SQLAlchemy
+#from webapp import routes, model
+
 
 def create_app():
     app = Flask(__name__)
@@ -29,10 +35,4 @@ def create_app():
     def load_user(user_id):
         return User.query.get(user_id)
     
-
     return app
-
-
-
-#from flask_sqlalchemy import SQLAlchemy
-#from webapp import routes, model
