@@ -17,8 +17,12 @@ def add_share(ap):
     
 def update_share(share_list):
     for shr in share_list:
-        ap = investpy.stocks.get_stock_information(shr, 'united states', as_json=True)
-        print(shr)
+        try:
+            ap = investpy.stocks.get_stock_information(shr, 'united states', as_json=True)
+            print(shr)
+        except RuntimeError:
+            print('stock iaie not found')
+            continue    
         one_share = Share.query.filter_by(stock_symbol = shr).first()
         if one_share:
             print(f'update {shr} to base')
