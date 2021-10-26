@@ -7,3 +7,4 @@ load_dotenv(os.path.join(basedir, '.env'))
 SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         'sqlite:///' + os.path.join(basedir, 'share.db')
 SQLALCHEMY_TRACK_MODIFICATIONS = False
+        
