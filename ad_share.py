@@ -9,6 +9,10 @@ share_list = ['AAPL', 'MSFT']
 
 
 def add_share(ap):
+    """
+    Функция добавляет информацию о компании в базу данных
+    
+    """
     one_share = Share(stock_symbol = ap['Stock Symbol'],eps = ap['EPS'],
         volume = ap['Volume'], pe_ratio = ap['P/E Ratio'], prev_close = ap['Prev. Close'],
         todays_range = replaces(ap))
@@ -16,6 +20,10 @@ def add_share(ap):
         
     
 def update_share(share_list):
+    """
+    Функция обновлет информацию о компании в базу данных
+    
+    """
     for shr in share_list:
         try:
             ap = investpy.stocks.get_stock_information(shr, 'united states', as_json=True)
