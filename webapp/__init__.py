@@ -1,7 +1,6 @@
 from flask import Flask
 from webapp.model import db
 from flask_migrate import Migrate
-#from flask_sqlalchemy import SQLAlchemy
 
 
 def create_app():

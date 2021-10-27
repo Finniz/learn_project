@@ -1,11 +1,9 @@
-from webapp.dbase import db_session
-from webapp.model import Share
+from webapp.model import Share, db
 from webapp import create_app
 
 import investpy
 
-#share_list = ['AAPL', 'MSFT', 'F', 'M', 'CL', 'TSLA', 'NVDA', 'FB', 'AMD', 'AMZN', 'QCOM', 'ZM', 'NFLX', 'ADBE', 'CSCO', 'INTC', 'DIS', 'WMT', 'JPM', 'CAT']
-share_list = ['AAPL', 'MSFT']
+share_list = ['AAPL', 'MSFT', 'F', 'M', 'CL', 'TSLA', 'NVDA', 'FB', 'AMD', 'AMZN', 'QCOM', 'ZM', 'NFLX', 'ADBE', 'CSCO', 'INTC', 'DIS', 'WMT', 'JPM', 'CAT']
 
 
 def add_share(ap):
@@ -40,12 +38,12 @@ def update_share(share_list):
             one_share.prev_close = ap['Prev. Close']
             one_share.todays_range = replaces(ap)
             print(one_share.todays_range)
-            db_session.commit()
+            db.session.commit()
             
         else:
             print(f'add {shr} to base') 
-            db_session.add(add_share(ap))
-            db_session.commit()
+            db.session.add(add_share(ap))
+            db.session.commit()
     
     
 def replaces(ap):
