@@ -1,5 +1,4 @@
 from flask_sqlalchemy import SQLAlchemy
-from webapp.dbase import Base, engine
 
 
 db = SQLAlchemy()
@@ -16,5 +15,4 @@ class Share(db.Model):
     def __repr__(self):
         return '< {} close price: {} day change: {}%>'.format( self.stock_symbol, self.prev_close, self.todays_range)
 
-if __name__==("__main__"):
-    Base.metadata.create_all(bind=engine)      
+    

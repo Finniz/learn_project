@@ -3,7 +3,7 @@ from webapp import create_app
 import investpy
 import pandas as pd
 
-app = create_app()
+
 
 
 def get_rises_5():
@@ -25,9 +25,11 @@ def get_falls_5():
     for share in shares:
         print(share)
 
-with app.app_context():
-   get_rises_5()
-   get_falls_5()
+if __name__ == "__main__":
+    app = create_app()
+    with app.app_context():
+        get_rises_5()
+        get_falls_5()
     
 
 

@@ -58,7 +58,7 @@ def replaces(ap):
     change_percent = int((float(change[0]) - float(change[1]))/float(change[0])*10000)/100
     return change_percent   
 
-
-app = create_app()
-with app.app_context():
-    update_share(share_list)  
+if __name__ == "__main__":
+    app = create_app()
+    with app.app_context():
+        update_share(share_list)  
