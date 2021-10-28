@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col text-center">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="dark dark-warning" role="dark">
+          {% for message in messages %}
+            {{ message }}<br>
+          {% endfor %}
+        </div>
+        {% endif %}
+      {% endwith %}
+      </div>
+      <div class="col-4"></div>
+    </div>
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col text-center">
+        <h3>Мировые индексы</h3>
+      </div>
+      <div class="col-4"></div>
+    </div>
+  </div>
+  <div class="bd-example container-fluid">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-8">
+        <table class="table table-borderless table-sm table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Индекс</th>
+              <th scope="col">Посл. цена</th>
+              <th scope="col">Макс. цена</th>
+              <th scope="col">Мин. цена</th>
+              <th scope="col">Изменение</th>
+              <th scope="col">Изменение %</th>
+              <th scope="col">Время</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col">
+      </div>
+    </div> 
+    <br>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-2">
+        </div>
+        <div class="col-2 text-center">
+          Топ-5 выросших акций
+        </div>
+        <div class="col-3">
+        </div>
+        <div class="col-2 text-center">
+          Топ-5 упавших акций
+        </div>
+        <div class="col-2">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2">
+        </div>
+        <div class="col-3">
+          <table class="table table-borderless table-sm table-striped">
+            <thead class="table green">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Название</th>
+                <th scope="col">Рост</th>
+                <th scope="col">Рост %</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-2">
+        </div>
+        <div class="col-3">
+          <table class="table table-borderless table-sm table-striped">
+            <thead class="table red">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Название</th>
+                <th scope="col">Падение</th>
+                <th scope="col">Падение %</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-2">
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

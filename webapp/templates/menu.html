@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <a href="/" class="navbar-brand"><img src="static/img/logo.png" class="round"></a>    
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <a href="#" class="nav-link link-dark">Курс доллара</a>
+        <a href="#" class="nav-link link-dark">Курс евро</a>
+        <a href="#" class="nav-link link-dark">ещё курс</a>
+        <a href="#" class="nav-link link-dark">ещё курс</a>
+      </ul>
+
+      <div class="col-md-3 text-end">
+        {% if current_user.is_authenticated %}
+        <a href="/user"><button type="button" class="btn btn-outline-dark me-2">Личный кабинет</button></a>
+        <a href="/logout"><button type="button" class="btn btn-dark">Выйти</button></a>
+        {% else %}
+        <a href="/login"><button type="button" class="btn btn-outline-dark me-2">Вход</button></a>
+        <a href="/register"><button type="button" class="btn btn-dark">Регистрация</button></a>
+        {% endif %}
+      </div>
+    </header>
+</div>
