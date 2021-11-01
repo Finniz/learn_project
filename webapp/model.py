@@ -1,7 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 
-
 db = SQLAlchemy()
+
 
 class Share(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -14,5 +14,3 @@ class Share(db.Model):
 
     def __repr__(self):
         return '< {} close price: {} day change: {}%>'.format( self.stock_symbol, self.prev_close, self.todays_range)
-
-    

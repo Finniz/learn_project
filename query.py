@@ -1,9 +1,5 @@
 from webapp.model import Share
 from webapp import create_app
-import investpy
-import pandas as pd
-
-
 
 
 def get_rises_5():
