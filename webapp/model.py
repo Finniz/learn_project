@@ -14,7 +14,3 @@ class Share(db.Model):
 
     def __repr__(self):
         return '< {} close price: {} day change: {}%>'.format( self.stock_symbol, self.prev_close, self.todays_range)
-
-    
-if __name__ == "__main__":
-    db = SQLAlchemy()
