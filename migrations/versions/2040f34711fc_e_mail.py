@@ -21,10 +21,11 @@ def upgrade():
     op.create_table('share',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('stock_symbol', sa.String(), nullable=True),
-    sa.Column('eps', sa.String(), nullable=False),
-    sa.Column('volume', sa.String(), nullable=False),
-    sa.Column('pe_ratio', sa.String(), nullable=False),
-    sa.Column('prev_close', sa.String(), nullable=True),
+    sa.Column('eps', sa.Float(), nullable=False),
+    sa.Column('volume', sa.Float(), nullable=False),
+    sa.Column('pe_ratio', sa.Float(), nullable=False),
+    sa.Column('prev_close', sa.Float(), nullable=False),
+    sa.Column('todays_range', sa.Float(), nullable=False),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('stock_symbol')
     )
