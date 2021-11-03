@@ -25,3 +25,23 @@ body, html {
     border: 1px solid #000;
     display: block;
 }
+
+.demotable {
+    border-collapse: collapse;
+    counter-reset: schetchik;
+  }
+  .demotable tbody tr {
+    counter-increment: schetchik;  /* сосчитать только tr в tbody */ 
+  }
+  .demotable td,
+  .demotable tbody tr:before {
+    padding: .1em .5em;
+  }
+  .demotable tbody tr:before {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .demotable tbody tr:before,
+  .demotable b:after {
+    content: counter(schetchik);
+  }
