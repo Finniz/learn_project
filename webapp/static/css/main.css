@@ -31,7 +31,7 @@ body, html {
     counter-reset: schetchik;
   }
   .demotable tbody tr {
-    counter-increment: schetchik;  /* сосчитать только tr в tbody */ 
+    counter-increment: schetchik;  
   }
   .demotable td,
   .demotable tbody tr:before {
@@ -45,3 +45,5 @@ body, html {
   .demotable b:after {
     content: counter(schetchik);
   }
+
+.menu {background-color: rgba(218, 226, 230, 0.733)}
