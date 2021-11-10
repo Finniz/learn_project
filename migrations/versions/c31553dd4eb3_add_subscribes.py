@@ -1,8 +1,8 @@
-"""add subscribe
+"""add subscribes
 
-Revision ID: 218ff0fb6284
+Revision ID: c31553dd4eb3
 Revises: 
-Create Date: 2021-11-04 17:03:12.159070
+Create Date: 2021-11-10 17:25:15.945540
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '218ff0fb6284'
+revision = 'c31553dd4eb3'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -41,10 +41,11 @@ def upgrade():
     op.create_index(op.f('ix_user_role'), 'user', ['role'], unique=False)
     op.create_index(op.f('ix_user_username'), 'user', ['username'], unique=True)
     op.create_table('subs',
-    sa.Column('user_id', sa.Integer(), nullable=True),
-    sa.Column('share_id', sa.Integer(), nullable=True),
+    sa.Column('user_id', sa.Integer(), nullable=False),
+    sa.Column('share_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['share_id'], ['share.id'], ),
-    sa.ForeignKeyConstraint(['user_id'], ['user.id'], )
+    sa.ForeignKeyConstraint(['user_id'], ['user.id'], ),
+    sa.PrimaryKeyConstraint('user_id', 'share_id')
     )
     # ### end Alembic commands ###
 

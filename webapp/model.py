@@ -17,6 +17,6 @@ class Share(db.Model):
     
 
 subs = db.Table('subs',
-    db.Column('user_id', db.Integer, db.ForeignKey('user.id')),
-    db.Column('share_id', db.Integer, db.ForeignKey('share.id'))
+    db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True),
+    db.Column('share_id', db.Integer, db.ForeignKey('share.id'), primary_key=True)
 )   

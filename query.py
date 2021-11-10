@@ -34,8 +34,13 @@ def get_subscribe(username,sharename):
         print('Ошибочные данные')
     else:
         shr.subscribers.append(usr)
-        db.session.commit()
-        print(f'{usr} подписан на {shr}')     
+        try:
+            db.session.commit()
+            print(f'{usr} подписан на {shr}')
+        except:
+            print('Пользователь уже подписан на эту акцию') 
+            db.session.rollback()   
+             
     
       
     
@@ -46,7 +51,7 @@ if __name__ == "__main__":
     with app.app_context():
         # get_rises_5()
         # get_falls_5()
-        # get_subscribe('user1', 'F')
-        usr = User.query.all()
-        for user in usr:
-            print(f'{user.username} подписан на', *user.subscriptions, sep='\n')
+        get_subscribe('user1', 'TSLA')
+        # usr = User.query.all()
+        # for user in usr:
+            # print(f'{user.username} подписан на', *user.subscriptions, sep='\n')
