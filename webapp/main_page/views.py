@@ -7,6 +7,7 @@ import indeces
 blueprint = Blueprint('main_page', __name__)
 
 
+
 @blueprint.route("/")
 def index():
     title = "Инвестиции"
@@ -15,6 +16,8 @@ def index():
     dollar = ('$ ' + str(dollar_value()))
     euro = ('€ ' + str(euro_value()))
     bitcoin = ('₿ ' + str(bitcoin_value()))
+    idx = indeces.idx
 
     return render_template('main_page/index.html', page_title=title, height=height, fall=fall, 
-    dollar=dollar, euro=euro, bitcoin=bitcoin)
+    dollar=dollar, euro=euro, bitcoin=bitcoin, idx=idx
+    )
