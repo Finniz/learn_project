@@ -49,9 +49,7 @@ def get_subscribe(username,sharename):
 if __name__ == "__main__":
     app = create_app()
     with app.app_context():
-        # get_rises_5()
-        # get_falls_5()
-        get_subscribe('user1', 'TSLA')
-        # usr = User.query.all()
-        # for user in usr:
-            # print(f'{user.username} подписан на', *user.subscriptions, sep='\n')
+        get_rises_5()
+        get_falls_5()
+        
+       
