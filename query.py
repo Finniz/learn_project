@@ -42,10 +42,6 @@ def get_subscribe(username,sharename):
             db.session.rollback()   
              
     
-      
-    
-          
-
 if __name__ == "__main__":
     app = create_app()
     with app.app_context():
