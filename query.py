@@ -41,11 +41,31 @@ def get_subscribe(username,sharename):
             print('Пользователь уже подписан на эту акцию') 
             db.session.rollback()   
              
+
+def unsubscribe(username,sharename): 
+    """
+    Подписываем пользователя на ценные бумаги
+    
+    """
+    usr = User.query.filter(User.username == username).first()
+    shr_id = Share.query.filter(Share.stock_symbol == sharename).first()
+    shr = db.session.query(Share).get(shr_id.id)
+        
+    if usr == None or shr == None:
+        print('Ошибочные данные')
+    else:
+        shr.subscribers.remove(usr)
+        try:
+            db.session.commit()
+            print(f'{usr} отписался от {shr}')
+        except:
+            print('Пользователь не подписан на эту акцию') 
+            db.session.rollback()                
     
 if __name__ == "__main__":
     app = create_app()
     with app.app_context():
         get_rises_5()
         get_falls_5()
+        # unsubscribe('user1','M')
         
-       
